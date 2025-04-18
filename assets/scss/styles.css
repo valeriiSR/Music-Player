@@ -1,0 +1,283 @@
+:root {
+  --grey-light: #bdc3c7;
+  --midnight: #2c3e50;
+  --asphalt: #34495e;
+  --green: #1abc9c;
+  --white: #ecf0f1;
+  --orange: #e67e22;
+  --orange-dark: #d35400;
+  --blue: #3498db;
+  --blue-dark: #2980b9;
+
+  --radius: .6rem;
+}
+
+body {
+  font-size: 14px;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+  background-color: var(--white);
+  color: var(--white);
+}
+
+.root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  background: #3498DB;
+  background: linear-gradient(180deg,rgba(52, 152, 219, 1) 0%, rgba(0, 44, 74, 1) 100%);
+  width: 800px;
+  min-height: 600px;
+  border-radius: var(--radius);
+  /* overflow: hidden; */
+}
+
+.app-title {
+  font-size: 1.8rem;
+  margin: 1rem 0 2rem 0;
+  font-weight: 500;
+  color: var(--asphalt);
+}
+
+.actions {
+  height: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1.6rem;
+}
+
+.volume {
+  position: relative;
+}
+.volume:hover .input-volume {
+  display: block;
+}
+
+.input-volume {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  left: -60px;
+  top: -17px;
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  width: 80px;
+  transform: rotate(90deg);
+}
+
+/* START. Custom input:range */
+
+.input-volume[type="range"] {
+  accent-color: var(--orange);
+}
+
+/* END. Custom input:range */
+
+.icon-sound {
+  width: 24px;
+  height: 24px;
+  fill: var(--orange);
+  transition: fill 0.25s, stroke 0.25s;
+  cursor: pointer;
+}
+
+.shuffle .icon-sound {
+  stroke: var(--orange);
+}
+
+.shuffle:hover svg {
+  stroke: var(--orange-dark);
+}
+
+.repeat:hover svg, .volume:hover svg {
+  fill: var(--orange-dark);
+}
+
+.repeat.active svg {
+  fill: var(--orange-dark);
+}
+
+/* START. Player */
+
+.playback {
+  display: flex;
+  padding: 1.6rem;
+  gap: 1rem;
+}
+
+.current-poster {
+  width: 140px;
+  height: 140px;
+  background-position: center center;
+  background-size: cover;
+  border-radius: var(--radius);
+}
+
+.current-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.playback__wrapper {
+  flex-grow: 1;
+}
+
+.artist__title {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.sound__title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.current-year {
+  font-size: 12px;
+}
+
+.controls__buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.controls__buttons svg {
+  cursor: pointer;
+  fill: var(--orange);
+  transition: all .3s;
+}
+
+.controls__buttons svg:hover {
+  fill: var(--orange-dark);
+}
+
+.next-button {
+  transform: rotate(180deg);
+}
+
+.controls__range input {
+  width: 100%;
+  accent-color: var(--orange);
+}
+
+.duration-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.controls-icon {
+  width: 24px;
+  height: 24px;
+  transition: all .3s;
+}
+
+.controls-icon__play {
+  stroke: var(--blue-dark);
+}
+
+.play-button .controls-icon {
+  width: 50px;
+  height: 50px;
+}
+/* END. Player */
+
+.track-list {
+  padding: 1.6rem;
+  padding-top: 0;
+}
+
+.track-list__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.track-list .header {
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.track-item {
+  position: relative;
+  display: grid;
+  gap: .6rem;
+  align-items: center;
+  grid-template-columns: 60px 1fr 1fr 1fr 60px;
+  border-radius: var(--radius);
+  transition: all .3s;
+}
+
+.track-item:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.track-item:hover {
+  background-color: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(5px);
+}
+
+.track-image {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius);
+  background-position: center center;
+  background-size: cover;
+}
+
+.track-info {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.track__group-name {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.track__group-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.track-play-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.track-play-btn svg {
+  transition: all .3s;
+  fill: var(--orange);
+}
+
+.track-play-btn svg:hover {
+  fill: var(--orange-dark);
+}

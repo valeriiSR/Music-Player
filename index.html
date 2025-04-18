@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/scss/reset.css">
+  <link rel="stylesheet" href="./assets/scss/styles.css">
+  <script type="module" defer src="./assets/js/app.js"></script>
+  <title>Music Player</title>
+</head>
+<body>
+  <div class="root">
+    <h1 class="app-title">Music Player</h1>
+    <main class="app">
+      <div class="container">
+        <div class="actions">
+          <div class="volume actions__icon" title="Volume">
+            <svg class="icon-sound">
+              <use xlink:href="./assets/images/UI/player-icons.svg#sound" />
+            </svg>
+            <input class="input-volume" type="range" name="volume" min="0" max="1" step="0.1" value="0.5" >
+          </div>
+          <div class="repeat actions__icon" title="Repeat">
+            <svg class="icon-sound">
+              <use xlink:href="./assets/images/UI/player-icons.svg#repeat" />
+            </svg>
+          </div>
+          <div class="shuffle actions__icon" title="Shuffle">
+            <svg class="icon-sound">
+              <use xlink:href="./assets/images/UI/player-icons.svg#shuffle" />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+
+        <div class="playback">
+          <!-- <div class="poster">
+            <div style="background-image: url('./assets/images/poster_1.jpg')" class="current-poster"></div>
+          </div>
+          <div class="playback__wrapper">
+            <div class="current-info">
+              <div class="current-info__titles">
+                <h2 class="artist__title">NF</h2>
+                <h3 class="sound__title">The Search</h3>
+              </div>
+              <span class="current-year">2018</span>
+            </div>
+            <div class="controls">
+              <div class="controls__buttons">
+                <div class="prev-button">
+                  <svg class="controls-icon">
+                    <use xlink:href="./assets/images/UI/player-icons.svg#arrow" />
+                  </svg>
+                </div>
+                <div class="play-button">
+                  <svg class="controls-icon">
+                    <use xlink:href="./assets/images/UI/player-icons.svg#play" />
+                  </svg>
+                </div>
+                <div class="next-button">
+                  <svg class="controls-icon">
+                    <use xlink:href="./assets/images/UI/player-icons.svg#arrow" />
+                  </svg>
+                </div>
+              </div>
+              <div class="controls__range">
+                <input type="range" name="duration" id="">
+                <div class="duration-info">
+                  <div class="timeline-start">00:15</div>
+                  <div class="timeline-end">03:43</div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+
+      </div>
+      <div class="container">
+        <div class="track-list">
+          <p class="header">All songs</p>
+          <div id="list" class="track-list__wrapper">
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
